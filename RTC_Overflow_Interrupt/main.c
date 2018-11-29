@@ -31,6 +31,10 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+void RTC_init(void);
+void LED0_init(void);
+void LED0_toggle(void);
+
 void RTC_init(void)
 {
     uint8_t temp;

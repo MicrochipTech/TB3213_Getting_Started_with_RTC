@@ -29,6 +29,11 @@
 #include <avr/interrupt.h>
 #include <avr/sleep.h>
 
+void RTC_init(void);
+void LED0_init(void);
+void LED0_toggle(void);
+void SLPCTRL_init(void);
+
 void RTC_init(void)
 {
     uint8_t temp;
