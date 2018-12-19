@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTC_Overflow_Interrupt", "RTC_Overflow_Interrupt\RTC_Overflow_Interrupt.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTC_Periodic_Interrupt", "RTC_Periodic_Interrupt\RTC_Periodic_Interrupt.cproj", "{A6F1A72E-08E7-424D-83D5-437606FCEEC2}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTC_PIT_Wake_from_Sleep", "RTC_PIT_Wake_from_Sleep\RTC_PIT_Wake_from_Sleep.cproj", "{1475ABA4-7100-4A8B-BB1E-3D8FECC4B86E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{A6F1A72E-08E7-424D-83D5-437606FCEEC2}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A6F1A72E-08E7-424D-83D5-437606FCEEC2}.Debug|AVR.Build.0 = Debug|AVR
+		{A6F1A72E-08E7-424D-83D5-437606FCEEC2}.Release|AVR.ActiveCfg = Release|AVR
+		{A6F1A72E-08E7-424D-83D5-437606FCEEC2}.Release|AVR.Build.0 = Release|AVR
+		{1475ABA4-7100-4A8B-BB1E-3D8FECC4B86E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{1475ABA4-7100-4A8B-BB1E-3D8FECC4B86E}.Debug|AVR.Build.0 = Debug|AVR
+		{1475ABA4-7100-4A8B-BB1E-3D8FECC4B86E}.Release|AVR.ActiveCfg = Release|AVR
+		{1475ABA4-7100-4A8B-BB1E-3D8FECC4B86E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
