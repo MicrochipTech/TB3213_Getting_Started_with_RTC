@@ -32,7 +32,7 @@
 
 void RTC_init(void);
 void LED0_init(void);
-void LED0_toggle(void);
+inline void LED0_toggle(void);
 void SLPCTRL_init(void);
 
 void RTC_init(void)
@@ -89,7 +89,7 @@ void LED0_init(void)
     PORTB.DIR |= PIN5_bm;
 }
 
-void LED0_toggle(void)
+inline void LED0_toggle(void)
 {
     PORTB.IN |= PIN5_bm;
 }
