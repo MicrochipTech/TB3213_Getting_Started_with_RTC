@@ -91,7 +91,7 @@ void LED0_init(void)
 
 inline void LED0_toggle(void)
 {
-    PORTB.IN |= PIN5_bm;
+    PORTB.OUTTGL |= PIN5_bm;
 }
 
 ISR(RTC_PIT_vect)
