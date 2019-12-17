@@ -30,10 +30,11 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/cpufunc.h>
 
 void RTC_init(void);
 void LED0_init(void);
-void LED0_toggle(void);
+inline void LED0_toggle(void);
 
 void RTC_init(void)
 {
@@ -43,9 +44,8 @@ void RTC_init(void)
     /* Disable oscillator: */
     temp = CLKCTRL.XOSC32KCTRLA;
     temp &= ~CLKCTRL_ENABLE_bm;
-    /* Enable writing to protected register */
-    CPU_CCP = CCP_IOREG_gc;
-    CLKCTRL.XOSC32KCTRLA = temp;
+    /* Writing to protected register */
+    ccp_write_io((void*)&CLKCTRL.XOSC32KCTRLA, temp);
     
     while(CLKCTRL.MCLKSTATUS & CLKCTRL_XOSC32KS_bm)
     {
@@ -55,16 +55,14 @@ void RTC_init(void)
     /* SEL = 0 (Use External Crystal): */
     temp = CLKCTRL.XOSC32KCTRLA;
     temp &= ~CLKCTRL_SEL_bm;
-    /* Enable writing to protected register */
-    CPU_CCP = CCP_IOREG_gc;
-    CLKCTRL.XOSC32KCTRLA = temp;
+    /* Writing to protected register */
+    ccp_write_io((void*)&CLKCTRL.XOSC32KCTRLA, temp);
     
     /* Enable oscillator: */
     temp = CLKCTRL.XOSC32KCTRLA;
     temp |= CLKCTRL_ENABLE_bm;
-    /* Enable writing to protected register */
-    CPU_CCP = CCP_IOREG_gc;
-    CLKCTRL.XOSC32KCTRLA = temp;
+    /* Writing to protected register */
+    ccp_write_io((void*)&CLKCTRL.XOSC32KCTRLA, temp);
     
     /* Initialize RTC: */
     while (RTC.STATUS > 0)
@@ -97,9 +95,9 @@ void LED0_init(void)
     PORTB.DIR |= PIN5_bm;
 }
 
-void LED0_toggle(void)
+inline void LED0_toggle(void)
 {
-    PORTB.IN |= PIN5_bm;
+    PORTB.OUTTGL |= PIN5_bm;
 }
 
 ISR(RTC_CNT_vect)
